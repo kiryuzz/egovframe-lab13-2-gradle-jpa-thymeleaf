@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MVC</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<ul id="menu">
+  <li>
+    MVC
+    <ul>
+      <li>사원정보 서비스 <a th:href="@{employee/employeeList}">리스트 보기</a> </li>
+        <li><a th:href="@{/board}">게시판 보기</a></li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>

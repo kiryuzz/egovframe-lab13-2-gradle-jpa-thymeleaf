@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 작성</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form>
+    <div id="wrap">
+        <table class="tbl_View">
+            <caption>Employee</caption>
+            <colgroup>
+                <col style="width:30%" />
+                <col style="width: ;" />
+            </colgroup>
+            <tbody>
+            <tr>
+                <th>제목</th>
+                <td><input id="sub" type="text" size="63" maxlength="20" /></td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <td><input id="name" type="text" size="63" maxlength="20" /></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><input id="content" type="text" size="63" maxlength="20" /></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="txt-rt mt20">
+            <input type="button" value="글 추가" id="btn-save"/>
+            <input type="button" value="목록" th:onclick="|location.href='@{/board}'|"/>
+        </div>
+    </div>
+</form>
+</body>
+<th:block th:replace="/fragments/footer::Js2"></th:block>
+</html>

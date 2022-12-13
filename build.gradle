@@ -1,0 +1,57 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '3.0.0'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'lab'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo1.maven.org/maven2/' }
+	maven {
+		url 'http://www.egovframe.go.kr/maven'
+		allowInsecureProtocol = true
+	}
+	maven {
+		url 'http://maven.egovframe.kr:8080/maven'
+		allowInsecureProtocol = true
+	}
+
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation group: 'egovframework.rte', name: 'egovframework.rte.psl.dataaccess', version:'3.6.0'
+	implementation group: 'egovframework.rte', name: 'egovframework.rte.fdl.idgnr', version:'3.6.0'
+	implementation group: 'egovframework.rte', name: 'egovframework.rte.fdl.property', version:'3.6.0'
+	implementation 'javax.servlet:servlet-api:2.5'
+	implementation 'javax.servlet:jstl:1.2'
+	implementation 'commons-dbcp:commons-dbcp:1.4'
+	implementation 'taglibs:standard:1.1.2'
+	implementation 'org.antlr:antlr:3.5'
+	implementation 'org.hsqldb:hsqldb:2.3.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

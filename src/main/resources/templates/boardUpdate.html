@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer View</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form name="hmsForm">
+    <div id="wrap">
+        <table class="tbl_View">
+            <caption>Employee</caption>
+            <colgroup>
+                <col style="width:30%" />
+                <col style="width: ;" />
+            </colgroup>
+            <tbody>
+            <tr>
+                <th>번호</th>
+                <input type="hidden" id="id" th:value="${board.no}"/>
+                <td th:text="${board.no}">사원번호</td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <input type="hidden" id="name" th:value="${board.name}"/>
+                <td th:text="${board.name}"></td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td><input id="sub" type="text" size="63" maxlength="20" th:value="${board.sub}"/></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><input id="content" type="text" size="63" maxlength="20" th:value="${board.content}"/></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="txt-rt mt20">
+            <input type="button" value="저장" id="btn-update"/>
+            <input type="button" value="목록" th:onclick="|location.href='@{/board}'|"/>
+        </div>
+    </div>
+</form>
+</body>
+<th:block th:replace="/fragments/footer::Js2"></th:block>
+</html>

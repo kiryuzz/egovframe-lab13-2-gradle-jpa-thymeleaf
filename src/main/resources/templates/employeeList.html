@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer List</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form>
+    <div id="wrap">
+        <table class="tbl_List">
+            <caption>Board</caption>
+            <colgroup>
+                <col style="width:9%" />
+                <col style="width:16%" />
+                <col style="width:16%" />
+                <col style="width:13%" />
+                <col style="width:11%" />
+                <col style="width: ;" />
+            </colgroup>
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="emp:${employeeList}">
+                <td><a th:href="@{/employee/{id}(id = ${emp.id})}" th:text="${emp.id}">사원 번호</a></td>
+                <td th:text="${emp.name}">사원 이름</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>
+        <div class="txt-rt mt20">
+            <input type="button" value="사원추가" th:onclick="|location.href='@{Add}'|" />
+        </div>
+    </div>
+</form>
+</body>
+</html>

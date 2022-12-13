@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Add</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form>
+    <div id="wrap">
+        <table class="tbl_View">
+            <caption>Employee</caption>
+            <colgroup>
+                <col style="width:30%" />
+                <col style="width: ;" />
+            </colgroup>
+            <tbody>
+            <tr>
+                <th>사원번호</th>
+                <td><input id="id" type="text" size="63" maxlength="20" /></td>
+            </tr>
+            <tr>
+                <th>부서</th>
+                <td>
+                    <select id="dept">
+                        <option selected="selected" value="">상위부서를 선택하세요.</option>
+                        <option value="01">기획팀</option>
+                        <option value="02">영업팀</option>
+                        <option value="03">개발팀</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td><input id="name" type="text" size="63" maxlength="20" /></td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td><input id="age" type="text" size="63" maxlength="20" /></td>
+            </tr>
+            <tr>
+                <th>전화번호</th>
+                <td><input id="phone" type="text" size="63" maxlength="20" /></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td><input id="email" type="email" size="63" maxlength="30" /></td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td><input id="address" type="text" size="63" maxlength="20" /></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="txt-rt mt20">
+            <input type="button" value="사원 추가" id="btn-save"/>
+            <input type="button" value="목록" th:onclick="|location.href='@{/employee/employeeList}'|"/>
+        </div>
+    </div>
+</form>
+</body>
+<th:block th:replace="/fragments/footer::Js"></th:block>
+</html>
