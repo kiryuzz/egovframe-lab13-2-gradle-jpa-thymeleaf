@@ -19,6 +19,7 @@ addr varchar(100));
 
 
 board 테이블
+
 CREATE TABLE board (
 no bigint primary key auto_increment,
 name VARCHAR(50), 
