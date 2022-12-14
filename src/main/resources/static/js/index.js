@@ -2,29 +2,17 @@ var main = {
     init : function () {
         var _this = this;
 
-        try {
-            document.getElementById("btn-save").addEventListener('click', () => {
+        document.getElementById("btn-save")?.addEventListener('click', () => {
                 _this.save();
             });
-        } catch (exception) {
-            console.log('요소 없음');
-        }
 
-        try {
-            document.getElementById("btn-update").addEventListener('click', () => {
+        document.getElementById("btn-update")?.addEventListener('click', () => {
                 _this.update();
             });
-        } catch (exception) {
-            console.log('요소 없음');
-        }
 
-        try {
-            document.getElementById("btn-delete").addEventListener('click', () => {
+        document.getElementById("btn-delete")?.addEventListener('click', () => {
                 _this.delete();
             });
-        } catch (e) {
-            console.log('요소 없음');
-        }
 
     },
     save : function () {
